@@ -1,6 +1,9 @@
 > This is an unsupported fork to make the plugin work with new versions of Next.js and "use client" directives. Use at your own peril.
 
-# `@victorandree/graphql-codegen-client-preset-swc-plugin`
+# `@benjibenji/graphql-codegen-client-preset-swc-plugin`
+
+> [!NOTE]
+> Updated to use SWC core 0.90.* to support Next.js 14.2.0
 
 When using the [`@graphql-codegen/client-preset`](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client) on large scale projects might want to enable code splitting or tree shaking on the `client-preset` generated files. This is because instead of using the map which contains all GraphQL operations in the project, we can use the specific generated document types.
 
@@ -9,7 +12,7 @@ This plugin works for [SWC](https://swc.rs) only.
 ### Installation
 
 ```bash
-yarn add -D @victorandree/graphql-codegen-client-preset-swc-plugin
+yarn add -D @benjibenji/graphql-codegen-client-preset-swc-plugin
 ```
 
 ### Usage
@@ -27,7 +30,7 @@ export default defineConfig({
   plugins: [
     react({
       plugins: [
-        ['@victorandree/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
+        ['@benjibenji/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
       ]
     })
   ]
@@ -41,7 +44,7 @@ const nextConfig = {
   // ...
   experimental: {
     swcPlugins: [
-      ['@victorandree/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
+      ['@benjibenji/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
     ]
   }
 }
@@ -56,7 +59,7 @@ const nextConfig = {
     // ...
     experimental: {
       plugins: [
-        ['@victorandree/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
+        ['@benjibenji/graphql-codegen-client-preset-swc-plugin', { artifactDirectory: './src/gql', gqlTagName: 'graphql' }]
       ]
     }
   }

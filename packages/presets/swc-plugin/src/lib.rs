@@ -203,7 +203,8 @@ impl VisitMut for GraphQLVisitor {
                     })],
                     src: Box::new(Str::from(platform_specific_path.to_string())),
                     type_only: false,
-                    with: None
+                    with: None,
+                    phase: ImportPhase::Evaluation,
                 })),
             )
         }
